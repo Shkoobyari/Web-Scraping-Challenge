@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mars</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container text-center">
+      <h1 class="jumbotron">Mission To Mars</h1>
+      <!-- <div>
+        <ul style="list-style: none">
+          {% for team in teams %}
+          <li>{{ team.player }}: {{ team.position }}</li>
+          {% endfor %}
+        </ul>
+      </div> -->
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Latest Mars News</h1>
+          <h4>{{ mars_data.news_title }}</h4>
+          <p>{{ mars_data.news_p }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h4>Featured Mars Image</h4>
+          <img
+            class="img-fluid"
+            src="{{ mars_data.featured_img_url}}"
+            alt="Mars Image"
+            style="width: 100%; height: 400px"
+          />
+        </div>
+        <div class="col-md-4">
+          <h4>Mars Facts</h4>
+          {{ mars_data.table_html|safe }}
+        </div>
+      </div>
+      <div class="row" style="margin-top: 40px">
+        <div class="col-md-6">
+          <img
+            src="{{ mars_data.hemisphere_img_urls[0].img_url }}"
+            alt="Cerberus Hemisphere"
+            style="width: 100%"
+          />
+          <h6>{{ mars_data.hemisphere_img_urls[0].title }}</h6>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="{{ mars_data.hemisphere_img_urls[1].img_url }}"
+            alt="Schiaperelli Hemisphere"
+            style="width: 100%"
+          />
+          <h6>{{ mars_data.hemisphere_img_urls[1].title }}</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="{{ mars_data.hemisphere_img_urls[2].img_url }}"
+            alt="Cerberus Hemisphere"
+            style="width: 100%"
+          />
+          <h6>{{ mars_data.hemisphere_img_urls[2].title }}</h6>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="{{ mars_data.hemisphere_img_urls[3].img_url }}"
+            alt="Schiaperelli Hemisphere"
+            style="width: 100%"
+          />
+          <h6>{{ mars_data.hemisphere_img_urls[3].title }}</h6>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
